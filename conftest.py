@@ -1,8 +1,11 @@
+import random
+
 import pytest
 from selenium import webdriver
-import random
-import string
+
+import helper
 from data import User
+
 
 @pytest.fixture(scope='function')
 def driver():
@@ -15,15 +18,10 @@ def driver():
     yield driver
     driver.quit()
 
-@pytest.fixture
-def user(gen_password):
-    user = User(name='Anastasia')
-    user.email = f'anastasiiadrozdovskaia5{random.randint(1000, 9999)}@autotest.ru'
-    user.password = gen_password
-    return user
 
 @pytest.fixture
-def gen_password():
-    characters = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choice(characters) for _ in range(6))
-    return password
+def user():
+    user = User(name='Anastasiia')
+    user.email = f'anastasiiadrozdovskaia5{random.randint(1000, 9999)}@autotest.ru'
+    user.password = helper.gen_password()
+    return user

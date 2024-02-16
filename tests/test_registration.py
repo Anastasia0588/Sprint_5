@@ -41,8 +41,6 @@ class TestRegistration:
         # получение адрес текущей страницы
         current_url = driver.current_url
 
-        driver.quit()
-
         # проверка, что текущий адрес страницы - личный кабинет
         assert '/account' in current_url
 
@@ -70,8 +68,6 @@ class TestRegistration:
 
         # получение адрес текущей страницы
         current_url = driver.current_url
-
-        driver.quit()
 
         # проверка, что текущий адрес страницы - личный кабинет
         assert '/register' in current_url and error_msg == 'Некорректный пароль'

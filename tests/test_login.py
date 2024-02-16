@@ -17,8 +17,6 @@ class TestLogin:
         # получение адрес текущей страницы
         current_url = driver.current_url
 
-        driver.quit()
-
         # проверка, что текущий адрес страницы - страниц авторизации
         assert '/login' in current_url
 
@@ -34,8 +32,6 @@ class TestLogin:
         # получение адрес текущей страницы
         current_url = driver.current_url
 
-        driver.quit()
-
         # проверка, что текущий адрес страницы - страниц аавторизации
         assert '/login' in current_url
 
@@ -50,8 +46,6 @@ class TestLogin:
 
         # получение адрес текущей страницы
         current_url = driver.current_url
-
-        driver.quit()
 
         # проверка, что текущий адрес страницы - страниц аавторизации
         assert '/login' in current_url
@@ -94,8 +88,6 @@ class TestLogin:
 
         # получение адрес текущей страницы
         current_url = driver.current_url
-
-        driver.quit()
 
         # проверка, что текущий адрес страницы - личный кабинет
         assert '/account' in current_url

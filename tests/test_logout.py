@@ -39,7 +39,6 @@ class TestLogout:
         # ожидание выполнения авторизации пользователя
         WebDriverWait(driver, 15).until(expected_conditions.visibility_of_element_located(Locators.ORDER_BUTTON))
 
-
         # клик по кнопке "Личный кабинет"
         WebDriverWait(driver, 15).until(expected_conditions.element_to_be_clickable(Locators.PROFILE_LINK))
         driver.find_element(*Locators.PROFILE_LINK).click()
@@ -52,8 +51,6 @@ class TestLogout:
 
         # ожидание, что выполнился logout
         WebDriverWait(driver, 15).until(expected_conditions.visibility_of_element_located(Locators.LOGIN_BUTTON))
-
-        driver.quit()
 
         # проверка, что выполнился выход и кнопка "Войти" отображается
         assert driver.find_element(*Locators.LOGIN_BUTTON).is_displayed()

@@ -1,5 +1,3 @@
-import time
-
 import pytest
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -25,7 +23,6 @@ class TestGoToPage:
 
         # ожидание, что кнопка "Зарегистрироваться" кликабельна
         WebDriverWait(driver, 10).until(expected_conditions.element_to_be_clickable(Locators.REGISTRATION_BUTTON))
-        time.sleep(55)
         driver.find_element(*Locators.REGISTRATION_BUTTON).click()
 
         # ожидание загрузки страницы пока не появится кнопка "Войти"
@@ -58,8 +55,6 @@ class TestGoToPage:
 
         # получение адрес текущей страницы
         current_url = driver.current_url
-
-        driver.quit()
 
         # проверка, что текущий адрес страницы - личный кабинет
         assert '/account' in current_url
@@ -112,8 +107,6 @@ class TestGoToPage:
 
         # получение адрес текущей страницы
         title = driver.find_element(*Locators.TITLE).text
-
-        driver.quit()
 
         # проверка, что текущий адрес страницы - личный кабинет
         assert title == 'Соберите бургер'
